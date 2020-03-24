@@ -8,8 +8,8 @@ class Aries extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Aries Page</h1>
-                <h2>Welcome {this.props.userName}</h2>
+                <h1>You're an Aries!</h1>
+                <h2></h2>
             </div>
          );
     }

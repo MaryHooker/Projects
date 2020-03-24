@@ -8,8 +8,9 @@ class Cancer extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Cancer Page</h1>
-                <h2>Welcome {this.props.userName}</h2>
+                <h1> You're a Cancer!</h1>
+                
+                
             </div>
          );
     }

@@ -8,7 +8,9 @@ class Aquarius extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Aquarius Page</h1>
+                <h1>You're an Aquarius!</h1>
+               
+                
             </div>
          );
     }

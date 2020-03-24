@@ -8,7 +8,7 @@ class Libra extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Libra Page</h1>
+                <h1>You're a Libra!</h1>
             </div>
          );
     }

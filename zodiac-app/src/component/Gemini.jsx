@@ -8,8 +8,7 @@ class Gemini extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Gemini Page</h1>
-                <h2>Welcome {this.props.userName}</h2>
+                <h1> You're a Gemini!</h1>
             </div>
          );
     }

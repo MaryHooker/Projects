@@ -8,7 +8,7 @@ class Virgo extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Virgo Page</h1>
+                <h1>You're a Virgo!</h1>
             </div>
          );
     }

@@ -8,7 +8,7 @@ class Capricorn extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Capricorn Page</h1>
+                <h1> You're a Capricorn!</h1>
             </div>
          );
     }

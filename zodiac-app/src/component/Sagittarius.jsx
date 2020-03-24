@@ -8,7 +8,7 @@ class Sagittarius extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Sagittarius Page</h1>
+                <h1>You're a Sagittarius!</h1>
             </div>
          );
     }

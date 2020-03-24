@@ -8,7 +8,7 @@ class Scorpio extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Scorpio Page</h1>
+                <h1>You're a Scorpio!</h1>
             </div>
          );
     }
