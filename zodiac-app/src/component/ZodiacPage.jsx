@@ -293,3 +293,16 @@ class ZodiacPage extends Component {
 
 
 export default ZodiacPage;
+
+// Aries – Red
+// Taurus- Pastel shades of pink, pale blue and green…
+// Gemini- Yellow
+// Cancer- Silvery Blue/Smokey Grey
+// Leo – Orange/Yellow (color of sun)
+// Virgo – Green and Dark Brown
+// Libra – Pink, Pale Green and various shades of blue
+// Scorpion – Deep Red and Maroon
+// Sagittarius – Rich Purples and Dark Blues
+// Capricorn – Subdued dark green, gray, black and brown
+// Aquarius – Electric Blue and Turquoise
+// Pisces- Soft Sea Green
