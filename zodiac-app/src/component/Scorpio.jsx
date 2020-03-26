@@ -8,12 +8,7 @@ class Scorpio extends Component {
     render() {
         return (
             <div>
-                <h1 className='yourSign'>You're a Scorpio!</h1>
                 <div className='infoContainer'>
-                  
-                    <div className='motto'>
-                        <h2>Motto: "You never know what you are capable of until you try."</h2>
-                    </div>
                     <div className='symbols'>
                         <h2>Dates: October 23 – November 22</h2>
                         <h2>Symbol: The Scorpion</h2>
@@ -21,6 +16,10 @@ class Scorpio extends Component {
                         <h2>Ruling Planet: Pluto</h2>
                         <h2>Spirit Color: Black</h2>
                         <h2>Lucky Gem: Topaz & opal</h2>
+                    </div>
+                    <div className='motto'>
+                        <h1 className='yourSign'>You're a <span>Scorpio</span>!</h1>
+                        <h2>Motto: "You never know what you are capable of until you try."</h2>
                     </div>
                     <div className='strengths'>
                         <h3>Strengths: Passionate, Driven, Perceptive, Emotional, Sacrificing, Determined</h3>

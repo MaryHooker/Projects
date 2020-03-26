@@ -51,7 +51,8 @@ class ZodiacPage extends Component {
                 pisces: false,
             })
         } else if (event.target.alt === 'taurus') {
-            this.setState({ taurus: true,
+            this.setState({
+                taurus: true,
                 aries: false,
                 gemini: false,
                 cancer: false,
@@ -62,9 +63,11 @@ class ZodiacPage extends Component {
                 sagittarius: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'cancer') {
-            this.setState({ cancer: true,
+            this.setState({
+                cancer: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -75,9 +78,11 @@ class ZodiacPage extends Component {
                 sagittarius: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'gemini') {
-            this.setState({ gemini: true,
+            this.setState({
+                gemini: true,
                 aries: false,
                 taurus: false,
                 cancer: false,
@@ -88,9 +93,11 @@ class ZodiacPage extends Component {
                 sagittarius: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'cancer') {
-            this.setState({ cancer: true,
+            this.setState({
+                cancer: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -101,9 +108,11 @@ class ZodiacPage extends Component {
                 sagittarius: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'leo') {
-            this.setState({ leo: true,
+            this.setState({
+                leo: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -114,9 +123,11 @@ class ZodiacPage extends Component {
                 sagittarius: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'virgo') {
-            this.setState({ virgo: true,
+            this.setState({
+                virgo: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -127,9 +138,11 @@ class ZodiacPage extends Component {
                 sagittarius: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'libra') {
-            this.setState({ libra: true,
+            this.setState({
+                libra: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -140,9 +153,11 @@ class ZodiacPage extends Component {
                 sagittarius: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'scorpio') {
-            this.setState({ scorpio: true,
+            this.setState({
+                scorpio: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -153,9 +168,11 @@ class ZodiacPage extends Component {
                 sagittarius: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
-        }else if (event.target.alt === 'sagittarius') {
-            this.setState({ sagittarius: true,
+                pisces: false,
+            })
+        } else if (event.target.alt === 'sagittarius') {
+            this.setState({
+                sagittarius: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -166,9 +183,11 @@ class ZodiacPage extends Component {
                 scorpio: false,
                 capricorn: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'capricorn') {
-            this.setState({ capricorn: true,
+            this.setState({
+                capricorn: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -179,9 +198,11 @@ class ZodiacPage extends Component {
                 scorpio: false,
                 sagittarius: false,
                 aquarius: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'aquarius') {
-            this.setState({ aquarius: true,
+            this.setState({
+                aquarius: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -192,9 +213,11 @@ class ZodiacPage extends Component {
                 scorpio: false,
                 sagittarius: false,
                 capricorn: false,
-                pisces: false, })
+                pisces: false,
+            })
         } else if (event.target.alt === 'pisces') {
-            this.setState({ pisces: true,
+            this.setState({
+                pisces: true,
                 aries: false,
                 taurus: false,
                 gemini: false,
@@ -205,7 +228,8 @@ class ZodiacPage extends Component {
                 scorpio: false,
                 sagittarius: false,
                 capricorn: false,
-                aquarius: false, })
+                aquarius: false,
+            })
         }
 
     }
@@ -246,8 +270,9 @@ class ZodiacPage extends Component {
 
                 <div>
                     <label htmlFor="sign" className='header'>What is your Zodiac Sign? </label>
-                    <br/>
+                    <br />
                     <div className='container'>
+                        
                         <img src="https://cdn.shopify.com/s/files/1/1325/0879/articles/headers-zodiac-sign-astrology-personality-positives-negatives-cheat-sheet-aries_1024x1024.png?v=1517850072" alt="aries" onClick={this.updateSign} className='sign' />
 
                         <img src="https://cdn.shopify.com/s/files/1/1325/0879/articles/headers-zodiac-sign-astrology-personality-positives-negatives-cheat-sheet-cancer_1024x1024.png?v=1517625158" alt="cancer" onClick={this.updateSign} className='sign' />

@@ -8,12 +8,7 @@ class Sagittarius extends Component {
     render() {
         return (
             <div>
-                <h1 className='yourSign'>You're a Sagittarius!</h1>
                 <div className='infoContainer'>
-                 
-                <div className='motto'>
-                        <h2>Motto: "Towering genius disdains a beaten path."</h2>
-                    </div>
                     <div className='symbols'>
                         <h2>Dates: November 23 – December 21</h2>
                         <h2>Symbol: The Archer</h2>
@@ -22,7 +17,10 @@ class Sagittarius extends Component {
                         <h2>Spirit Color: Light Blue</h2>
                         <h2>Lucky Gem: Topaz</h2>
                     </div>
-                    
+                    <div className='motto'>
+                        <h1 className='yourSign'>You're a <span>Sagittarius</span>!</h1>
+                        <h2>Motto: "Towering genius disdains a beaten path."</h2>
+                    </div>
                     <div className='strengths'>
                         <h3>Strengths: Ambitious, Lucky, Moral, Optimistic, Enthusiastic, Open-minded, Versatile</h3>
                         <h3>Weaknesses: Gluttonous, Lazy, Restless, Irresponsible, Blindly Optimistic, Tactless</h3>
