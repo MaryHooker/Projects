@@ -2,4 +2,58 @@ body{
   background-color: purple;
   color: pink;
   text-align: center;
+  font-family: serif;
+  font-size: 24px;
+}
+
+.links{
+  color: rgb(219, 179, 68);
+  padding: 1%;
+  margin: 1%;
+  font-size: 22px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form{
+  margin-top: 1%;
+}
+
+fieldset{
+  border: 3px solid rgb(219, 179, 68);
+}
+legend{
+  font-size: 28px;
+}
+
+.padding{
+padding: 1%;
+text-align: center;
+}
+
+input{
+  background-color: rgb(219, 179, 68);
+  color: purple;
+}
+
+button{
+  background-color: rgb(219, 179, 68);
+  color: purple;
+  font-family: serif;
+  font-size: 17px;
+  height: 27px;
+  font-weight: bold;
+  /* margin-top: 2%;   */
+}
+
+.breaks{
+  border-bottom: 2px solid rgb(219, 179, 68);
+}
+
+.display{
+  font-size: 16px;
+  text-align: center;
 }
