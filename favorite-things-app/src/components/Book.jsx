@@ -8,7 +8,9 @@ class Book extends Component {
     render() { 
         return ( 
             <div>
-                <h2>Favorite Book</h2>
+                <h2>Where The Wild Things Are</h2>
+                <p>By Maurice Sendak</p>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71eczBv1C5L._AC_SL1001_.jpg" alt="bookPic" className='bookImage'/>
             </div>
          );
     }

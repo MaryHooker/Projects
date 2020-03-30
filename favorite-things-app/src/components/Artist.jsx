@@ -8,7 +8,8 @@ class Artist extends Component {
     render() { 
         return ( 
             <div>
-                <h2>Favorite Artist</h2>
+                <h3>Oscar-Claude Monet</h3>
+                <img src="https://www.theartstory.org/images20/new_design/bio_box/bio_box_monet_claude.jpg" alt="monet"/>
             </div>
          );
     }

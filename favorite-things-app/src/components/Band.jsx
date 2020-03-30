@@ -8,7 +8,8 @@ class Band extends Component {
     render() { 
         return ( 
             <div>
-                <h2>Favorite Band</h2>
+                <h2>The Cranberries</h2>
+                <img src="https://s3.amazonaws.com/ohmyrocknessdotcom/uploads/band/image/41110/cran.jpg" alt="cranberries"/>
             </div>
          );
     }

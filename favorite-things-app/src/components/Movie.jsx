@@ -8,7 +8,8 @@ class Movie extends Component {
     render() { 
         return ( 
             <div>
-                <h2>Favorite Movie</h2>
+                <h2>Hook</h2>
+                <img src="https://am22.mediaite.com/tms/cnt/uploads/2020/03/hook-1200x675.jpg" alt="hook" className='hookImage'/>
             </div>
          );
     }
