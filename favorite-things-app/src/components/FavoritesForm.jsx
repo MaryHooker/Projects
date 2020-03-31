@@ -17,7 +17,9 @@ class FavoritesForm extends Component {
 
     handleInputs = (event) => {
        
-        if (event.target.name==='artist'){
+        if (event.target.name==='Username'){
+            this.setState({name:event.target.value})
+        } else if (event.target.name==='artist'){
             this.setState({artist:event.target.value})
         } else if (event.target.name==='band'){
             this.setState({band:event.target.value})
@@ -29,9 +31,7 @@ class FavoritesForm extends Component {
             this.setState({show:event.target.value})
         } else if (event.target.name==='videogame'){
             this.setState({videogame:event.target.value})
-        } else if (event.target.name==='name'){
-            this.setState({name:event.target.value})
-        }
+        } 
 
     }
 
@@ -74,9 +74,9 @@ class FavoritesForm extends Component {
                     <fieldset>
                         <legend>Favorites</legend>
                         <div>
-                            <label htmlFor="name">Name: </label>
+                            <label htmlFor="Username">Name: </label>
                             <br/>
-                            <input type="text" name='name' id='name' value={this.state.name} onChange={this.handleInputs}/>
+                            <input type="text" name='Username' id='Username' value={this.state.name} onChange={this.handleInputs}/>
                         </div>
                         <div className='padding'>
                             <label htmlFor="artist">Who's your favorite artist? </label>
