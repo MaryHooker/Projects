@@ -13,6 +13,11 @@ body{
   font-size: 22px;
 }
 
+.textCenter{
+  width: 40%;
+  margin-left: 30%;
+  font-size: 24px;
+}
 .container{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -46,7 +51,6 @@ button{
   font-size: 17px;
   height: 27px;
   font-weight: bold;
-  /* margin-top: 2%;   */
 }
 
 .breaks{
@@ -54,22 +58,41 @@ button{
 }
 
 .display{
-  font-size: 16px;
-  text-align: center;
+  font-size: 17px;
+  text-align: left;
+  margin-left: 3%;
+}
+
+.monetImage{
+  width: 530px;
+}
+
+.nameSize{
+  font-size: 22px;
+}
+
+.bandImage{
+  width: 530px;
 }
 
 .hookImage{
-  width: 36%;
+  width: 530px;
 }
 
 .officeImage{
-  width: 30%;
+  width: 490px;
 }
 
 .outerWorldsImage{
-  width: 38%;
+  width: 550px;
 }
 
 .bookImage{
-  width: 35%;
+  width: 450px;
+}
+
+
+span{
+  font-weight: bold;
+  color: rgb(31, 180, 17);
 }

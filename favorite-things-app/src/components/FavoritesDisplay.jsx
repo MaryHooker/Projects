@@ -12,13 +12,13 @@ class FavoritesDisplay extends Component {
                     this.props.favorites.map((favorite,index)=>{
                         return(
                             <div key={index}>
-                                <h3>{favorite.name}'s Favorites</h3>
-                                <p>Artist: {favorite.artist}</p>
-                                <p>Band: {favorite.band}</p>
-                                <p>Book: {favorite.book}</p>
-                                <p>Movie: {favorite.movie}</p>
-                                <p>Show: {favorite.show}</p>
-                                <p className='breaks'>Video Game: {favorite.videogame}</p>
+                                <h3 className='nameSize'><span>{favorite.name}'s Favorites</span></h3>
+                                <p><span>Artist:</span> {favorite.artist}</p>
+                                <p><span>Band:</span> {favorite.band}</p>
+                                <p><span>Book:</span> {favorite.book}</p>
+                                <p><span>Movie:</span> {favorite.movie}</p>
+                                <p><span>Show:</span> {favorite.show}</p>
+                                <p className='breaks'><span>Video Game:</span> {favorite.videogame}</p>
                             </div>
                         )
                     }

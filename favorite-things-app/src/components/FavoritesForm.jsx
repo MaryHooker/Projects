@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class FavoritesForm extends Component {
     constructor(props) {
         super(props);
@@ -67,6 +68,8 @@ class FavoritesForm extends Component {
         )
     }
 
+    
+
     render() {
         return (
             <div>
@@ -110,8 +113,10 @@ class FavoritesForm extends Component {
                         </div>
                         <div>
                             <button onClick={this.handleSubmission}>Submit Favorites</button>
+               
                         </div>
                     </fieldset>
+
                 </form>
             </div>
         );
