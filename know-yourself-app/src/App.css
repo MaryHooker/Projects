@@ -1,0 +1,39 @@
+
+.appContainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-family: serif;
+  background-image:url('/purpleFlower.jpg');
+  height: 100vh;
+  text-align: center;
+}
+
+.welcomeSign{
+  color: rgb(236, 193, 236);
+  font-size: 12vh;
+}
+
+.inputLabel{
+  color: rgb(189, 192, 17);
+}
+
+input{
+  background-color: rgb(236, 193, 236);
+  color: rgb(83, 19, 83);
+  height: 23px;
+  width: 140px;
+}
+
+.knowYourself{
+  color: rgb(236, 193, 236);
+  font-size: 38px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.links{
+  color: rgb(189, 192, 17);
+  padding: 3px;
+  margin:5%;
+  font-size: 24px;
+}
