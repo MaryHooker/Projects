@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import {BrowserRouter as Router,Link,Route} from 'react-router-dom';
-import AppContainer from './AppContainer';
+// import {BrowserRouter as Router,Link,Route} from 'react-router-dom';
+// import AppContainer from './AppContainer';
 
 class Aspirations extends Component{
     constructor(props){
