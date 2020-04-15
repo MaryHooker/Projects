@@ -10,20 +10,68 @@
 
 .welcomeSign{
   color: rgb(236, 193, 236);
-  font-size: 12vh;
+  font-size: 15vh;
+  margin-top: 15%;
+}
+
+.openingButton{
+  font-size: 20px;
+  font-weight:bold;
+  background-color: rgb(83, 19, 83);
+  color: rgb(236, 193, 236);
+  border: 1px solid rgb(236, 193, 236);
+}
+
+.openingButton:hover{
+  background-color:rgb(236, 193, 236);
+  border: 1px solid rgb(236, 193, 236);
+  color: rgb(83, 19, 83);
+}
+
+/* ///////////////////////////////////////////////// */
+/* Welcome Component */
+
+.formContainer{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  margin-top: 20%;
+}
+
+.formPosition{
+  grid-column: 1/12;
 }
 
 .inputLabel{
-  color: rgb(189, 192, 17);
+  color: rgb(236, 193, 236);
+  font-size: 24px;
 }
 
 input{
   background-color: rgb(236, 193, 236);
   color: rgb(83, 19, 83);
-  height: 23px;
-  width: 140px;
+  border: 1px solid rgb(83, 19, 83);
+  border-radius: 5%;
+  height: 34px;
+  width: 150px;
+  padding: 5px;
 }
 
+.submitButton{
+  background-color: rgb(83, 19, 83);
+  color: rgb(236, 193, 236);
+  border: 1px solid rgb(236, 193, 236);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.submitButton:hover{
+  background-color:rgb(236, 193, 236);
+  border: 1px solid rgb(236, 193, 236);
+  color: rgb(83, 19, 83);
+}
+
+/* ///////////////////////////////////////////////// */
+/* Home Component */
 .knowYourself{
   color: rgb(236, 193, 236);
   font-size: 38px;
@@ -37,3 +85,4 @@ input{
   margin:5%;
   font-size: 24px;
 }
+/* ///////////////////////////////////////////////// */

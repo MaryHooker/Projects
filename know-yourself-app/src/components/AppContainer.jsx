@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Home from './Home';
 import Welcome from './Welcome';
+import {Button} from 'react-bootstrap';
 
 
 class AppContainer extends Component {
@@ -32,7 +32,7 @@ class AppContainer extends Component {
         let displayed =
             <div className='mainDisplay'>
                 <p className='welcomeSign'>Welcome</p>
-                <button onClick={this.handleSubmission}>Let's Get Started!</button>
+                <Button onClick={this.handleSubmission} variant='success' className='openingButton'>Let's Get Started!</Button>
             </div>
 
         if (this.state.welcome) {
