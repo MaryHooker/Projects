@@ -29,12 +29,13 @@
 }
 
 /* ///////////////////////////////////////////////// */
-/* Welcome Component */
+
 
 .formContainer{
   display: grid;
   grid-template-columns: repeat(12,1fr);
-  margin-top: 20%;
+  margin-top: 18%;
+  margin-left: 2%;
 }
 
 .formPosition{
@@ -43,7 +44,7 @@
 
 .inputLabel{
   color: rgb(236, 193, 236);
-  font-size: 28px;
+  font-size: 34px;
 }
 
 input{
@@ -52,7 +53,7 @@ input{
   border: 1px solid rgb(83, 19, 83);
   border-radius: 5%;
   height: 34px;
-  width: 150px;
+  width: 180px;
   padding: 5px;
 }
 
@@ -60,7 +61,7 @@ input{
   background-color: rgb(83, 19, 83);
   color: rgb(236, 193, 236);
   border: 1px solid rgb(236, 193, 236);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
 }
 
@@ -71,7 +72,7 @@ input{
 }
 
 /* ///////////////////////////////////////////////// */
-/* Home Component */
+
 .knowYourself{
   color: rgb(236, 193, 236);
   font-size: 38px;
@@ -86,3 +87,31 @@ input{
   font-size: 24px;
 }
 /* ///////////////////////////////////////////////// */
+/* ASPIRATIONS/FEARS/HAPPY JOYS */
+
+.linkTitles{
+  color: rgb(236, 193, 236);
+}
+
+.linkLabels{
+  color: rgb(236, 193, 236);
+  font-size: 20px;
+}
+
+.textArea{
+background-color: rgb(236, 193, 236);
+color: rgb(83, 19, 83);
+border: rgb(83, 19, 83);
+border-radius: 2%;
+}
+
+span{
+  color: aqua;
+}
+
+.linkButtons{
+  background-color: rgb(189, 192, 17);
+  color: rgb(83, 19, 83);
+  font-size:18px;
+}
+

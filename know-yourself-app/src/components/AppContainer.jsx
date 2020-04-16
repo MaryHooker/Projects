@@ -96,6 +96,7 @@ class AppContainer extends Component {
                 <input type="email" name='userEmail' id='email' value={this.state.email} onChange={this.handleInputs}/>
                 <br/>
                 <br/>
+                <br/>
                 <Button onClick={this.handleFormSubmission} variant='success' className='submitButton'>Submit</Button>
             </form>
           
