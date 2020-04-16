@@ -5,8 +5,19 @@ class Aspirations extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            hidden: false,
 
         }
+    }
+
+    imageRender = () =>{
+        
+           this.setState(
+               {
+                   hidden: true
+               }
+           ) 
+        
     }
 
     render() {
@@ -32,7 +43,10 @@ class Aspirations extends Component {
                     <br />
                     <label htmlFor="" className='linkLabels'>Would you rather:</label>
                     <br />
-                    <Button className='linkButtons'>Have a private jet?</Button> <span>or</span> <Button className='linkButtons'>Have a yaght?</Button>
+                    <Button className='linkButtons' onClick='imageRender'>Have a private jet?</Button> <span>or</span> <Button className='linkButtons'>Have a yaght?</Button>
+                    <div>
+                    <img src="https://static01.nyt.com/images/2018/01/28/travel/28jets-1/28jets-1-superJumbo.jpg" alt="plane" hidden/>
+                    </div>
                 </div>
             </div>
         )
