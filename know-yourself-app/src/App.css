@@ -75,7 +75,7 @@ input{
 
 .knowYourself{
   color: rgb(236, 193, 236);
-  font-size: 38px;
+  font-size: 44px;
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -83,8 +83,9 @@ input{
 .links{
   color: rgb(189, 192, 17);
   padding: 3px;
-  margin:5%;
-  font-size: 24px;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 28px;
 }
 /* ///////////////////////////////////////////////// */
 /* ASPIRATIONS/FEARS/HAPPY JOYS */
