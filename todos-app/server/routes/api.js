@@ -70,31 +70,46 @@ router.get('/work', (req,res) => {
 //Create request
 router.post('/personal',(req,res) => {
     console.log(`Create personal task request!`)
-    res.send(`Create personal task request!`);
+    // res.send(`Create personal task request!`);
+    PersonalCollection.create(req.body, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 //Read request by DATE
-router.get('/personal/:date', (req,res) => {
+router.get('/personal/:personalDate', (req,res) => {
     console.log(`Read personal request by date!`);
-    res.send(`Read personal request by date!`);
+    // res.send(`Read personal request by date!`);
+    PersonalCollection.findOne({personalDate:req.params.personalDate}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 //Update request by DATE
-router.put('/personal/:date', (req,res) => {
+router.put('/personal/:personalDate', (req,res) => {
     console.log(`Update personal request by date!`);
-    res.send(`Update personal request by date!`);
+    // res.send(`Update personal request by date!`);
+    PersonalCollection.findOneAndUpdate({personalDate:req.params.personalDate}, req.body, {new:true}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 //Delete request by DATE
-router.delete('/personal/:date', (req,res) => {
+router.delete('/personal/:personalDate', (req,res) => {
     console.log(`Delete personal request by date!`);
-    res.send(`Delete personal request by date!`);
+    // res.send(`Delete personal request by date!`);
+    PersonalCollection.findOneAndDelete({personalDate:req.params.personalDate}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 //Read all request
 router.get('/personal', (req,res) => {
     console.log(`Read all personal requests!`);
-    res.send(`Read all personal requests!`);
+    // res.send(`Read all personal requests!`);
+    PersonalCollection.find({}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 
