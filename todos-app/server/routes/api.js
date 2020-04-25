@@ -5,9 +5,9 @@ let router = express.Router();
 router.use(express.json());
 
 //import Schemas
-
-
-
+let WorkCollection = require('../models/ToDoWorkSchema');
+let PersonalCollection = require('../models/ToDoPersonalSchema');
+let BillsCollection = require('../models/ToDoBillsSchema');
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 /////
