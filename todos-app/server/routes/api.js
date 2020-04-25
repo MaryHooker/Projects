@@ -18,31 +18,46 @@ let BillsCollection = require('../models/ToDoBillsSchema');
 //Create request
 router.post('/work', (req,res) => {
     console.log(`Create work task request!`);
-    res.send(`Create work task request!`);
+    // res.send(`Create work task request!`);
+    WorkCollection.create(req.body, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 //Read request by DATE
-router.get('/work/:date', (req,res) => {
+router.get('/work/:workDate', (req,res) => {
     console.log(`Read work request by date!`);
-    res.send(`Read work request by date!`);
+    // res.send(`Read work request by date!`);
+    WorkCollection.findOne({workDate:req.params.workDate}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 //Update request by DATE
-router.put('/work/:date', (req,res) => {
+router.put('/work/:workDate', (req,res) => {
     console.log(`Update work request by date!`);
-    res.send(`Update work request by date!`);
+    // res.send(`Update work request by date!`);
+    WorkCollection.findOneAndUpdate({workDate:req.params.workDate}, req.body, {new:true}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 //Delete request by DATE
-router.delete('/work/:date', (req,res) => {
+router.delete('/work/:workDate', (req,res) => {
     console.log(`Delete work request by date!`);
-    res.send(`Delete work request by date!`);
+    // res.send(`Delete work request by date!`);
+    WorkCollection.findOneAndDelete({workDate:req.params.workDate}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 //Read all request
 router.get('/work', (req,res) => {
     console.log(`Read all work requests!`);
-    res.send(`Read all work requests!`);
+    // res.send(`Read all work requests!`);
+    WorkCollection.find({}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
 })
 
 
