@@ -1,7 +1,12 @@
 body{
   background-color: rgb(166, 230, 166);
   color: rgb(46, 92, 46);
-  font-size: 36px;
+  font-size: 22px;
   text-align: center;
   font-family: serif;
+}
+
+.appContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
