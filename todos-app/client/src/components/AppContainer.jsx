@@ -14,18 +14,23 @@ class AppContainer extends Component {
 
             <div>
                 <Router>
-                    <Link to='/'>Home</Link>
-                    <h1>To Do's</h1>
+
                     <div className='appContainer'>
-                        <div>
+                        <div className='homeLink'>
+                            <Link to='/'>Home</Link>
+                        </div>
+                        <div className='mainTitle'>
+                        <h1>To Do's</h1>
+                        </div>
+                        <div className='workLink'>
                             <Link to='/work'>Work</Link>
                             <Route exact path='/work' component={WorkToDos} />
                         </div>
-                        <div>
+                        <div className='personalLink'>
                             <Link to='/personal'>Personal</Link>
                             <Route exact path='/personal' component={PersonalToDos} />
                         </div>
-                        <div>
+                        <div className='billLink'>
                             <Link to='/bills'>Bills</Link>
                             <Route exact path='/bills' component={BillToDos} />
                         </div>
