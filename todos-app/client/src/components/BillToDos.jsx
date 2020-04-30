@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class BillToDos extends Component {
     constructor(props) {
@@ -32,9 +33,11 @@ class BillToDos extends Component {
                     this.state.billsList.map((task)=>{
                         return(
                             <div key={task._id}>
+                                <Link to={`/billdetails/${task.bill}`}>
                                 <p>Bill: {task.bill}</p>
+                                </Link>
                                 <p>Pay By: {task.payBy}</p>
-                                <p>Due Date: {task.dueDate}</p>
+                                <p>Due Date: {task.billDueDate}</p>
                                 <hr/>
                             </div>
                         )

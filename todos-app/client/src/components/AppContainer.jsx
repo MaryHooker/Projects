@@ -3,6 +3,11 @@ import WorkToDos from './WorkToDos';
 import PersonalToDos from './PersonalToDos';
 import BillToDos from './BillToDos';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import AddWork from './AddWork';
+import AddPersonal from './AddPersonal';
+import AddBill from './AddBill';
+import { Button } from 'react-bootstrap';
+import ViewBillTask from './ViewBillTask';
 
 class AppContainer extends Component {
     constructor(props) {
@@ -24,15 +29,33 @@ class AppContainer extends Component {
                         </div>
                         <div className='workLink'>
                             <Link to='/work'>Work</Link>
+                            <br/>
+                            <Button variant='success'><Link to='/addWork'>Add Work Task</Link></Button>
+                            <Route exact path='/addWork' component={AddWork}/>
+                            <br/>
                             <Route exact path='/work' component={WorkToDos} />
+                            <br/>
                         </div>
                         <div className='personalLink'>
                             <Link to='/personal'>Personal</Link>
+                            <br/>
+                            <Button variant='success'><Link to='/addPersonal'>Add Personal Task</Link></Button>
+                            <Route exact path='/addPersonal' component={AddPersonal}/>
+                            <br/>
                             <Route exact path='/personal' component={PersonalToDos} />
+                            <br/>
                         </div>
                         <div className='billLink'>
                             <Link to='/bills'>Bills</Link>
+                            <br/>
+                            <Button variant='success'><Link to='/addBill'>Add Bill</Link></Button>
+                            <Route exact path='/addBill' component={AddBill}/>
+                            <br/>
                             <Route exact path='/bills' component={BillToDos} />
+                            <br/>
+                            <div>
+                                <Route path='/billdetails/:bill' component={ViewBillTask}/>
+                            </div>
                         </div>
                     </div>
                 </Router>
