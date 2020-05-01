@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class PersonalToDos extends Component {
     constructor(props) {
@@ -32,7 +33,9 @@ class PersonalToDos extends Component {
                     this.state.personalList.map((task)=>{
                         return(
                             <div key={task._id}>
+                                <Link to={`/personaldetails/${task.personalDate}`}>
                                 <p>Date: {task.personalDate}</p>
+                                </Link>
                                 <p>Task: {task.personalTask}</p>
                                 <hr/>
                             </div>

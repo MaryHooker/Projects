@@ -8,6 +8,8 @@ import AddPersonal from './AddPersonal';
 import AddBill from './AddBill';
 import { Button } from 'react-bootstrap';
 import ViewBillTask from './ViewBillTask';
+import ViewPersonalTask from './ViewPersonalTask';
+import ViewWorkTask from './ViewWorkTask';
 
 class AppContainer extends Component {
     constructor(props) {
@@ -35,6 +37,9 @@ class AppContainer extends Component {
                             <br/>
                             <Route exact path='/work' component={WorkToDos} />
                             <br/>
+                            <div>
+                                <Route path='/workdetails/:workDate' component ={ViewWorkTask}/>
+                            </div>
                         </div>
                         <div className='personalLink'>
                             <Link to='/personal'>Personal</Link>
@@ -44,6 +49,9 @@ class AppContainer extends Component {
                             <br/>
                             <Route exact path='/personal' component={PersonalToDos} />
                             <br/>
+                            <div>
+                                <Route path='/personaldetails/:personalDate' component={ViewPersonalTask}/>
+                            </div>
                         </div>
                         <div className='billLink'>
                             <Link to='/bills'>Bills</Link>

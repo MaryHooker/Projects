@@ -17,7 +17,9 @@ class ViewBillTask extends Component {
 
     //fetch method to view one Bill
     loadData = async () => {
-        let response = await fetch(`/api/bill/${this.props.match.params.bill}`);
+        console.log(`VIEW BILL TASK ${JSON.stringify(this.props.match.params)}`);
+        let bill = this.props.match.params.bill;
+        let response = await fetch(`/api/bill/${bill}`);
         // Pull out the json data
         let json = await response.json();
         //sanity
