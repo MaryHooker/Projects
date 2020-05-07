@@ -54,34 +54,35 @@ router.delete('/:movieTitle',(req,res) => {
     })
 })
 
-//Read all movies
-router.get('/',(req,res) => {
+//Read all movies by name
+router.get('/who/movies', authenticateToken, (req,res) => {
     console.log(`Reading all movies!`);
     // res.send(`Reading all movies!`);
-    MovieCollection.find({},(errors,results) => {
+    MovieCollection.find({for: req.user.name},(errors,results) => {
         errors ? res.send(errors) : res.send(results);
     })
 })
 
+//Get movies by User Name
 
 
-// //Authenticate Token Middleware
-// function authenticateToken(req,res,next) {
-//     const authHeader = req.headers["authorization"];
-//     const token = authHeader && authHeader.split(' ')[1];
-//     //If there is not token send 401 error status
-//     if (token === null) {return res.status(401);
-//     } else {
-//     // else verify the token and user
-//     jwt.verify(token, secretKey, (errors, user) => {
-//         if (errors){  res.status(403).json({ error: "verification error" });
-//     } else{
-//         req.user = user;
-//         next();
-//     }
-// })
-// }
-// }
+//Authenticate Token Middleware
+function authenticateToken(req,res,next) {
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(' ')[1];
+    //If there is not token send 401 error status
+    if (token === null) {return res.status(401);
+    } else {
+    // else verify the token and user
+    jwt.verify(token, secretKey, (errors, user) => {
+        if (errors){  res.status(403).json({ error: "verification error" });
+    } else{
+        req.user = user;
+        next();
+    }
+})
+}
+}
 
 
 //export route
