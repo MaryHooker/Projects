@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class ViewWorkTask extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class ViewWorkTask extends Component {
                 <p>Date: {this.state.workDate}</p>
                 <p>Task: {this.state.workTask}</p>
                 <p>Due Date: {this.state.workDueDate}</p>
-                <button>Edit</button>  <button>Delete</button>
+                <Link to={`/update/work/${this.state.workDate}`}><button>Edit</button> </Link> <button>Delete</button>
             </div>
         );
     }

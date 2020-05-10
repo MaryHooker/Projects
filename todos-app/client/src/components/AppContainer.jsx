@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import WorkToDos from './WorkToDos';
-import PersonalToDos from './PersonalToDos';
-import BillToDos from './BillToDos';
+import WorkToDos from './work/WorkToDos';
+import PersonalToDos from './personal/PersonalToDos';
+import BillToDos from './bills/BillToDos';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import AddWork from './AddWork';
-import AddPersonal from './AddPersonal';
-import AddBill from './AddBill';
+import AddWork from './work/AddWork';
+import AddPersonal from './personal/AddPersonal';
+import AddBill from './bills/AddBill';
 import { Button } from 'react-bootstrap';
-import ViewBillTask from './ViewBillTask';
-import ViewPersonalTask from './ViewPersonalTask';
-import ViewWorkTask from './ViewWorkTask';
+import ViewBillTask from './bills/ViewBillTask';
+import ViewPersonalTask from './personal/ViewPersonalTask';
+import ViewWorkTask from './work/ViewWorkTask';
+import EditWorkTask from './work/EditWorkTask';
 
 class AppContainer extends Component {
     constructor(props) {
@@ -29,6 +30,7 @@ class AppContainer extends Component {
                         <div className='mainTitle'>
                         <h1>To Do's</h1>
                         </div>
+                        {/* WORK/////////////////////////////////////////////// */}
                         <div className='workLink'>
                             <Link to='/work'>Work</Link>
                             <br/>
@@ -39,8 +41,10 @@ class AppContainer extends Component {
                             <br/>
                             <div>
                                 <Route path='/workdetails/:workDate' component ={ViewWorkTask}/>
+                                <Route path='/update/work/:workdate' component = {EditWorkTask}/>
                             </div>
                         </div>
+                        {/* PERSONAL////////////////////////////////////////////// */}
                         <div className='personalLink'>
                             <Link to='/personal'>Personal</Link>
                             <br/>
@@ -53,6 +57,7 @@ class AppContainer extends Component {
                                 <Route path='/personaldetails/:personalDate' component={ViewPersonalTask}/>
                             </div>
                         </div>
+                        {/* BILLS//////////////////////////////////////////////////// */}
                         <div className='billLink'>
                             <Link to='/bills'>Bills</Link>
                             <br/>

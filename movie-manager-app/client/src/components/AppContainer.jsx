@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Login from './Login';
 import Register from './Register';
 import ForMe from './ForMe';
-import MyFavorites from './MyFavorites';
 import ForThem from './ForThem';
 import ForThemToWatch from './ForThemToWatch';
 import ForMeToWatch from './ForMeToWatch';
@@ -63,18 +62,23 @@ class AppContainer extends Component {
             <div>
                 <h1>Movie List Manager</h1>
                 <Router>
-                    <Link to='/register'>Register</Link> | 
-                    <Link to='/login'>Login</Link> | 
-                    <Link to='/myfavorites'>My Favorites</Link> | 
-                    {/* ROUTES */}
+                    <Link to='/'>Home</Link>
+                    <br/>
+                    {/* Links */}
+                    <Link to='/register'>Register</Link> |
+                    <Link to='/login'>Login</Link> |
+                    <br />
+                    <Link to='/forMe'>For Me</Link> |
+                    <Link to='/forThem'>For Them</Link>
+                    {/* Routes */}
                     <Route path='/login' component={() => <Login logInUser={this.logInUser} />} />
                     <Route path='/register' component={() => <Register />} />
-                    <Route path='/myfavorites' component={() => <MyFavorites token={this.state.token}/>} />
-                    {/* <ForMe/>
-                <MyFavorites/>
-                <ForMeToWatch/>
-                <ForThem/>
-                <ForThemToWatch/> */}
+                    {/* For Me */}
+                    <Route path='/forMe' component={() => <ForMe token={this.state.token} />} />
+                    <Route path='/forMeToWatch' component={() => <ForMeToWatch />} />
+                    {/* For Them */}
+                    <Route path='/forThem' component={() => <ForThem />} />
+                    <Route path='/forThemToWatch' component={() => <ForThemToWatch />} />
                 </Router>
             </div>
         );

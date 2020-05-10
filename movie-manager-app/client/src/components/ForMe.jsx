@@ -1,14 +1,25 @@
 import React,{Component} from 'react';
+import MyFavorites from './MyFavorites';
+
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
 class ForMe extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {
+         }
     }
+
     render() { 
         return ( 
             <div>
-                <h2>Parent for MyFavorites And ForMeToWatch</h2>
+                <Router>
+                    
+                    <Link path='/myFavorites'>My Favorites</Link> | 
+                    <Link path='/forMeToWatch'>To Watch</Link>
+
+                    <Route to='/myFavorites' component={() => <MyFavorites token={this.props.token} />} />
+                </Router>
             </div>
          );
     }
