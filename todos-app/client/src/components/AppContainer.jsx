@@ -41,7 +41,7 @@ class AppContainer extends Component {
                             <br/>
                             <div>
                                 <Route path='/workdetails/:workDate' component ={ViewWorkTask}/>
-                                <Route path='/update/work/:workdate' component = {EditWorkTask}/>
+                                <Route path='/update/work/:workDate' component = {EditWorkTask}/>
                             </div>
                         </div>
                         {/* PERSONAL////////////////////////////////////////////// */}

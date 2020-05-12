@@ -4,9 +4,7 @@ class EditWorkTask extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            workDate:'',
-            workTask:'',
-            workDueDate:'',
+            document: [],
         }
     }
 
@@ -15,30 +13,56 @@ class EditWorkTask extends Component {
     }
 
     //get one document from collection
-    loadData = async() => {
+    loadData = async () => {
         let response = await fetch(`api/work/${this.props.match.params.workDate}`);
         let json = await response.json();
         this.setState({
-            workDate:json.workDate,
-            workTask:json.workTask,
-            workDueDate:json.workDueDate,
+            workDate: json.workDate,
+            workTask: json.workTask,
+            workDueDate: json.workDueDate,
         })
-        console.log(`Edit ${JSON.stringify(this.state)}`)                                                                                                                                                  
+        console.log(`Edit ${JSON.stringify(this.state)}`)
     }
 
     handleInputs = (event) => {
-        if(event.target.name==='workDate'){
-            this.setState({workDate:event.target.value})
-        } else if(event.target.name==='workTask'){
-            this.setState({workTask:event.target.value})
-        } else if(event.target.name==='workDueDate'){
-            this.setState({workDueDate:event.target.value})
+        if (event.target.name === 'workDate') {
+            this.setState({ workDate: event.target.value })
+        } else if (event.target.name === 'workTask') {
+            this.setState({ workTask: event.target.value })
+        } else if (event.target.name === 'workDueDate') {
+            this.setState({ workDueDate: event.target.value })
         }
     }
 
+    handleSubmission = async (event) => {
+        event.preventDefault();
+        // object for form submission
+        let formSubmission = {
+            workDate: this.state.workDate,
+            workTask: this.state.workTask,
+            workDueDate: this.state.workDueDate,
+        }
+
+        // fetch put endpoint with query params
+        let response = await fetch(`/api/work/${this.props.match.params.workDate}`, {
+            method: "PUT",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            // send form submission in request body
+            body: JSON.stringify(formSubmission)
+          
+        });
+
+        let json = await response.json();
+        console.log(json); // check returned json data
+
+    }
     render() {
         return (
             <div>
+                <h3>Update</h3>
                 <form action="">
                     <div>
                         <label htmlFor="workDate">Date: </label>
