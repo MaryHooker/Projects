@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class ViewBillTask extends Component {
     constructor(props) {
@@ -40,7 +41,7 @@ class ViewBillTask extends Component {
                 <p>Bill: {this.state.bill}</p>
                 <p>Pay By: {this.state.payBy}</p>
                 <p>Due Date: {this.state.billDueDate}</p>
-                <button>Edit </button>  <button>Delete</button>
+                <Link to={`/update/bill/${this.state.bill}`}><button>Edit</button></Link>  <button>Delete</button>
             </div>
         );
     }

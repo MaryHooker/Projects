@@ -4,7 +4,9 @@ class EditWorkTask extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            document: [],
+            workDate:"",
+            workTask:"",
+            workDueDate:"",
         }
     }
 

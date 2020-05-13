@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class ViewPersonalTask extends Component {
     constructor(props) {
@@ -35,8 +36,8 @@ class ViewPersonalTask extends Component {
         return (
             <div>
                 <p>Date: {this.state.personalDate}</p>
-                <p>Task {this.state.personalTask}</p>
-                <button>Edit</button>  <button>Delete</button>
+                <p>Task: {this.state.personalTask}</p>
+                <Link to={`/update/personal/${this.state.personalDate}`}><button>Edit</button> </Link> <button>Delete</button>
             </div>
         );
     }
