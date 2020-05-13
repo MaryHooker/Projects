@@ -26,6 +26,36 @@ class EditBill extends Component {
         })
     }
 
+    //handle change in inputs
+    handleInputs = (event) => {
+        if(event.target.name==='bill'){
+            this.setState({bill:event.target.value})
+        } else if(event.target.name==='payBy'){
+            this.setState({payBy:event.target.value})
+        } else if(event.target.name==='billDueDate'){
+            this.setState({billDueDate:event.target.value})
+        }
+    }
+
+    handleSubmission = async(event) => {
+        event.preventDefault();
+        let newData = {
+            bill:this.state.bill,
+            payBy:this.state.payBy,
+            billDueDate:this.state.billDueDate                                                              
+        }
+        let response = await fetch(`/api/bill/${this.state.bill}`,{
+            method:'POST',
+            headers:{
+                'Accept':'application/json',
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify(newData)
+        })
+        let json = await response.json();
+        console.log(`Edit Bill${JSON.stringify(json)}`)
+    }
+
     render() { 
         return ( 
             <div>
