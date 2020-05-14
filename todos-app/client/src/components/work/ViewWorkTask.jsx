@@ -34,9 +34,11 @@ class ViewWorkTask extends Component {
     render() {
         return (
             <div>
-                <p>Date: {this.state.workDate}</p>
-                <p>Task: {this.state.workTask}</p>
-                <p>Due Date: {this.state.workDueDate}</p>
+                <br/>
+                <h4 className='specificTitle'>Work</h4>
+                <p><span>Date:</span> {this.state.workDate}</p>
+                <p><span>Task:</span> {this.state.workTask}</p>
+                <p><span>Due Date:</span> {this.state.workDueDate}</p>
                 <Link to={`/update/work/${this.state.workDate}`}><button>Edit</button> </Link> <button>Delete</button>
             </div>
         );

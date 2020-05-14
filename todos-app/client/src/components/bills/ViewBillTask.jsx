@@ -38,9 +38,11 @@ class ViewBillTask extends Component {
     render() {
         return (
             <div>
-                <p>Bill: {this.state.bill}</p>
-                <p>Pay By: {this.state.payBy}</p>
-                <p>Due Date: {this.state.billDueDate}</p>
+                <br/>
+                <h4 className='specificTitle'>Bill</h4>
+                <p><span>Bill:</span> {this.state.bill}</p>
+                <p><span>Pay By:</span> {this.state.payBy}</p>
+                <p><span>Due Date:</span> {this.state.billDueDate}</p>
                 <Link to={`/update/bill/${this.state.bill}`}><button>Edit</button></Link>  <button>Delete</button>
             </div>
         );

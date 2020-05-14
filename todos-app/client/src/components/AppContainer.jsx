@@ -23,55 +23,56 @@ class AppContainer extends Component {
         return (
 
             <div>
+
+
                 <Router>
+                    <div>
+
+                        <div className='mainTitle'>
+                            <h1>To Do's</h1>
+                        </div>
+                        <div className='homeLink'>
+                            <Link to='/' className='homeTitle'>Home</Link>
+                          
+                        </div>
+                        <br/>
+                    </div>
 
                     <div className='appContainer'>
-                        <div className='homeLink'>
-                            <Link to='/'>Home</Link>
-                        </div>
-                        <div className='mainTitle'>
-                        <h1>To Do's</h1>
-                        </div>
-                        {/* WORK/////////////////////////////////////////////// */}
+
+                        {/* Links */}
+
+                        <Link to='/work' className='workTitle'>Work</Link>  
+                        <Link to='/personal' className='personalTitle'>Personal</Link> 
+                        <Link to='/bills' className='billsTitle'>Bills</Link>  
+
+                        {/* Routes */}
+
+                        {/*////// WORK //////// */}
                         <div className='workLink'>
-                            <Link to='/work'>Work</Link>
-                            <br/>
-                            <Button variant='warning'><Link to='/addWork'>Add Work Task</Link></Button>
-                            <Route exact path='/addWork' component={AddWork}/>
-                            <br/>
+                            <Route exact path='/addWork' component={AddWork} />
                             <Route exact path='/work' component={WorkToDos} />
-                            <br/>
                             <div>
-                                <Route path='/workdetails/:workDate' component ={ViewWorkTask}/>
-                                <Route path='/update/work/:workDate' component = {EditWorkTask}/>
+                                <Route path='/workdetails/:workDate' component={ViewWorkTask} />
+                                <Route path='/update/work/:workDate' component={EditWorkTask} />
                             </div>
                         </div>
-                        {/* PERSONAL////////////////////////////////////////////// */}
+                        {/* /////// PERSONAL ////////*/}
                         <div className='personalLink'>
-                            <Link to='/personal'>Personal</Link>
-                            <br/>
-                            <Button variant='warning'><Link to='/addPersonal'>Add Personal Task</Link></Button>
-                            <Route exact path='/addPersonal' component={AddPersonal}/>
-                            <br/>
+                            <Route exact path='/addPersonal' component={AddPersonal} />
                             <Route exact path='/personal' component={PersonalToDos} />
-                            <br/>
                             <div>
-                                <Route path='/personaldetails/:personalDate' component={ViewPersonalTask}/>
-                                <Route path='/update/personal/:personalDate' component ={EditPersonalTask}/>
+                                <Route path='/personaldetails/:personalDate' component={ViewPersonalTask} />
+                                <Route path='/update/personal/:personalDate' component={EditPersonalTask} />
                             </div>
                         </div>
-                        {/* BILLS//////////////////////////////////////////////////// */}
+                        {/*/////// BILLS //////// */}
                         <div className='billLink'>
-                            <Link to='/bills'>Bills</Link>
-                            <br/>
-                            <Button variant='warning'><Link to='/addBill'>Add Bill</Link></Button>
-                            <Route exact path='/addBill' component={AddBill}/>
-                            <br/>
+                            <Route exact path='/addBill' component={AddBill} />
                             <Route exact path='/bills' component={BillToDos} />
-                            <br/>
                             <div>
-                                <Route path='/billdetails/:bill' component={ViewBillTask}/>
-                                <Route path='/update/bill/:bill' component ={EditBill}/>
+                                <Route path='/billdetails/:bill' component={ViewBillTask} />
+                                <Route path='/update/bill/:bill' component={EditBill} />
                             </div>
                         </div>
                     </div>

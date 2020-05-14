@@ -1,17 +1,54 @@
 body{
-  background-color: rgb(193, 173, 224);
+  background-color: rgb(211, 198, 230);
   color: rgb(46, 51, 92);
   font-size: 22px;
   text-align: center;
   font-family: serif;
 }
 
-.appContainer{
-  display: grid;
-  grid-template-columns: auto auto auto;
+span{
+  font-weight: bold;
 }
 
-.homeLink{
+.homeTitle{
+  color: rgb(6, 99, 26);
+  font-size: 25px;
+}
+
+.workTitle{
+  color: rgb(196, 99, 21);
+  margin: 1%;
+}
+
+.personalTitle{
+  color: rgb(161, 12, 161);
+  margin: 1%;
+}
+
+.billsTitle{
+  color: rgb(23, 15, 139);
+  margin: 1%;
+}
+
+.specificTitle{
+  color: rgb(16, 139, 129);
+}
+/* .appContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+} */
+
+.buttons{
+  color: rgb(201, 233, 19);
+  font-size: 20px;
+  height: 10px;
+}
+
+.buttonColor{
+  background-color: rgb(92, 153, 92);
+  border: 1px solid rgb(92, 153, 92);
+}
+/* .homeLink{
   grid-column: 2;
 }
 
@@ -29,4 +66,5 @@ body{
 
 .billLink{
   grid-column: 3;
-}
+} */
+

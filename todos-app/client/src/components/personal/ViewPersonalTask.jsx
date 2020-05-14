@@ -35,8 +35,10 @@ class ViewPersonalTask extends Component {
     render() {
         return (
             <div>
-                <p>Date: {this.state.personalDate}</p>
-                <p>Task: {this.state.personalTask}</p>
+                <br/>
+                <h4 className='specificTitle'>Personal</h4>
+                <p><span>Date:</span> {this.state.personalDate}</p>
+                <p><span>Task:</span> {this.state.personalTask}</p>
                 <Link to={`/update/personal/${this.state.personalDate}`}><button>Edit</button> </Link> <button>Delete</button>
             </div>
         );
