@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class ViewWorkTask extends Component {
     constructor(props) {
@@ -12,12 +12,12 @@ class ViewWorkTask extends Component {
     }
 
     //run fetch method when component mounts
-    componentDidMount(){
+    componentDidMount() {
         this.loadData();
     }
 
     //Fetch method to View One Work Task
-    loadData = async() => {
+    loadData = async () => {
         let workDate = this.props.match.params.workDate;
         let response = await fetch(`/api/work/${workDate}`)
         let json = await response.json();
@@ -26,20 +26,34 @@ class ViewWorkTask extends Component {
         this.setState(
             {
                 workDate: json.workDate,
-                workTask:json.workTask,
+                workTask: json.workTask,
                 workDueDate: json.workDueDate
             }
         )
     }
+
+    //Fetch delete method from server
+    deleteTask = async () => {
+        let response = await fetch(`/api/work/${this.state.workDate}`, {
+            method: 'DELETE'
+        })
+        let json = await response.json();
+        //sanity
+        console.log(json)
+
+        //brute force redirect
+        window.location = '/work'
+    }
+
     render() {
         return (
             <div>
-                <br/>
+                <br />
                 <h4 className='specificTitle'>Work</h4>
                 <p><span>Date:</span> {this.state.workDate}</p>
                 <p><span>Task:</span> {this.state.workTask}</p>
                 <p><span>Due Date:</span> {this.state.workDueDate}</p>
-                <Link to={`/update/work/${this.state.workDate}`}><button>Edit</button> </Link> <button>Delete</button>
+                <Link to={`/update/work/${this.state.workDate}`}><button>Edit</button> </Link> <button onClick={this.deleteTask}>Delete</button>
             </div>
         );
     }

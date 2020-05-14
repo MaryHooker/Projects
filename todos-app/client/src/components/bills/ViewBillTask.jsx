@@ -35,6 +35,19 @@ class ViewBillTask extends Component {
         )
     }
 
+    //Fetch delete method from server
+    deleteTask = async () => {
+        let response = await fetch(`/api/bill/${this.state.bill}`, {
+            method: 'DELETE'
+        })
+        let json = await response.json();
+        //sanity
+        console.log(json)
+
+        //brute force redirect
+        window.location = '/bills'
+    }
+
     render() {
         return (
             <div>
@@ -43,7 +56,7 @@ class ViewBillTask extends Component {
                 <p><span>Bill:</span> {this.state.bill}</p>
                 <p><span>Pay By:</span> {this.state.payBy}</p>
                 <p><span>Due Date:</span> {this.state.billDueDate}</p>
-                <Link to={`/update/bill/${this.state.bill}`}><button>Edit</button></Link>  <button>Delete</button>
+                <Link to={`/update/bill/${this.state.bill}`}><button>Edit</button></Link>  <button onClick={this.deleteTask}>Delete</button>
             </div>
         );
     }
