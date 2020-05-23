@@ -7,44 +7,60 @@ let jwt = require('jsonwebtoken');
 let secretKey = require('../config/keys').secretKey;
 
 //imports models
+let SecretCollection = require('../models/SecretSchema')
 
-//sanity
-router.get('/test',(req,res) =>{
-    res.send(`Loud and Clear`)
-})
+// //sanity
+// router.get('/test',(req,res) =>{
+//     res.send(`Loud and Clear`)
+// })
 
 ///////////////////////////////////////////////////
-// Password Routes
+// Secret Routes
 /////////////////////////////////////////////////
 
-//Create a password
-router.post('/password',(req,res) => {
-    console.log(`Created a password!`);
-    res.send(`Password Created!`);
+//Create a secret
+router.post('/secret',(req,res) => {
+    console.log(`Created a secret!`);
+    // res.send(`Secret Created!`);
+    SecretCollection.create( req.body, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
 })
 
-//Read One password
-router.get('/password/:title',(req,res) => {
-    console.log(`Reading one password!`);
-    res.send(`Reading one password!`);
+//Read One secret
+router.get('/secret/:title',(req,res) => {
+    console.log(`Reading one secret!`);
+    // res.send(`Reading one secret!`);
+    SecretCollection.findOne({title:req.params.title}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
 })
 
-//Update a password by title
-router.put('/password/:title',(req,res) => {
-    console.log(`Updating one password!`);
-    res.send(`Updating one password!`);
+//Update secret by title
+router.put('/secret/:title',(req,res) => {
+    console.log(`Updating one secret!`);
+    // res.send(`Updating one secret!`);
+    SecretCollection.findOneAndUpdate({title:req.body.title}, req.body, {new:true}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
 })
 
-//Delete a password by title
-router.delete('/password/:title',(req,res) => {
-    console.log(`Deleting one password!`);
-    res.send(`Deleting one password!`);
+//Delete secret by title
+router.delete('/secret/:title',(req,res) => {
+    console.log(`Deleting one secret!`);
+    // res.send(`Deleting one secret!`);
+    SecretCollection.findOneAndDelete({title:req.params.title}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
 })
 
-//Read all passwords
-router.get('/password',(req,res) => {
-    console.log(`Reading all passwords!`);
-    res.send(`Reading all passwords!`);
+//Read all secret
+router.get('/secret',(req,res) => {
+    console.log(`Reading all secrets!`);
+    // res.send(`Reading all secrets!`);
+    SecretCollection.find({}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
 })
 
 
