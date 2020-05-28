@@ -95,7 +95,7 @@ router.post('/login',(req,res) => {
 })
 
 //Endpoint to verifyToken and hold onto Payload
-router.post('/jwtpayload', VerifyToken, (req,res) =>{
+router.post('/verify', VerifyToken, (req,res) =>{
     // res.send(`Secret`);
     jwt.verify(req.token, secretKey, (errors,results) => {
         //ternary/if error verifying token send error message/else send results under message object as json

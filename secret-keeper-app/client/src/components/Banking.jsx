@@ -16,7 +16,13 @@ class Banking extends Component {
 
     //fetch method to show all passwords
     allBankingSecrets = async () => {
-        let response = await fetch('/api/secret/banking');
+        let response = await fetch('/api/secret/banking',{
+            method:'GET',
+            headers:
+            {
+                'Authorization':this.props.token
+            }
+        });
         let json = await response.json();
         //sanity
         console.table(json)

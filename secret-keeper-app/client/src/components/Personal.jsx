@@ -23,7 +23,12 @@ class Personal extends Component {
 
     //fetch method to show all passwords
     allPersonalSecrets = async () => {
-        let response = await fetch('/api/secret/personal');
+        let response = await fetch('/api/secret/personal',{
+            method:'GET',
+            headers:{
+                'Authorization':this.props.token
+            }
+        });
         let json = await response.json();
         //sanity
         console.table(json)

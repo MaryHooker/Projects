@@ -21,7 +21,7 @@ let IdentityCollection = require('../models/IdentitySchema');
 /////////////////////////////////////////////////
 
 //Create a secret
-router.post('/secret/personal',(req,res) => {
+router.post('/secret/personal',authenticateToken,(req,res) => {
     console.log(`Created a secret!`);
     // res.send(`Secret Created!`);
     PersonalCollection.create( req.body, (errors,results) => {
@@ -30,7 +30,7 @@ router.post('/secret/personal',(req,res) => {
 })
 
 //Read One secret
-router.get('/secret/personal/:For',(req,res) => {
+router.get('/secret/personal/:For',authenticateToken,(req,res) => {
     console.log(`Reading one secret!`);
     // res.send(`Reading one secret!`);
     PersonalCollection.findOne({For:req.params.For}, (errors,results) => {
@@ -39,7 +39,7 @@ router.get('/secret/personal/:For',(req,res) => {
 })
 
 //Update secret by For
-router.put('/secret/personal/:For',(req,res) => {
+router.put('/secret/personal/:For',authenticateToken,(req,res) => {
     console.log(`Updating one secret!`);
     // res.send(`Updating one secret!`);
     PersonalCollection.findOneAndUpdate({For:req.body.For}, req.body, {new:true}, (errors,results) => {
@@ -48,7 +48,7 @@ router.put('/secret/personal/:For',(req,res) => {
 })
 
 //Delete secret by For
-router.delete('/secret/personal/:For',(req,res) => {
+router.delete('/secret/personal/:For',authenticateToken,(req,res) => {
     console.log(`Deleting one secret!`);
     // res.send(`Deleting one secret!`);
     PersonalCollection.findOneAndDelete({For:req.params.For}, (errors,results) => {
@@ -57,7 +57,7 @@ router.delete('/secret/personal/:For',(req,res) => {
 })
 
 //Read all personal secret
-router.get('/secret/personal',(req,res) => {
+router.get('/secret/personal',authenticateToken,(req,res) => {
     console.log(`Reading all secrets!`);
     // res.send(`Reading all secrets!`);
     PersonalCollection.find({}, (errors,results) => {
@@ -66,7 +66,7 @@ router.get('/secret/personal',(req,res) => {
 })
 
 //Read all Personal secret
-router.get('/secret/personal/For/:For',(req,res) => {
+router.get('/secret/personal/For/:For',authenticateToken,(req,res) => {
     console.log(`Reading all secrets!`);
     // res.send(`Reading all secrets!`);
     BankingCollection.find({For: req.params.For}, (errors,results) => {
@@ -78,7 +78,7 @@ router.get('/secret/personal/For/:For',(req,res) => {
 /////////////////////////////////////////////////
 
 //Create a secret
-router.post('/secret/banking',(req,res) => {
+router.post('/secret/banking',authenticateToken,(req,res) => {
     console.log(`Created a secret!`);
     // res.send(`Secret Created!`);
     BankingCollection.create( req.body, (errors,results) => {
@@ -87,7 +87,7 @@ router.post('/secret/banking',(req,res) => {
 })
 
 //Read One secret
-router.get('/secret/banking/:For',(req,res) => {
+router.get('/secret/banking/:For',authenticateToken,(req,res) => {
     console.log(`Reading one secret!`);
     // res.send(`Reading one secret!`);
     BankingCollection.findOne({For:req.params.For}, (errors,results) => {
@@ -96,7 +96,7 @@ router.get('/secret/banking/:For',(req,res) => {
 })
 
 //Update secret by For
-router.put('/secret/banking/:For',(req,res) => {
+router.put('/secret/banking/:For',authenticateToken,(req,res) => {
     console.log(`Updating one secret!`);
     // res.send(`Updating one secret!`);
     BankingCollection.findOneAndUpdate({For:req.body.For}, req.body, {new:true}, (errors,results) => {
@@ -105,7 +105,7 @@ router.put('/secret/banking/:For',(req,res) => {
 })
 
 //Delete secret by For
-router.delete('/secret/banking/:For',(req,res) => {
+router.delete('/secret/banking/:For',authenticateToken,(req,res) => {
     console.log(`Deleting one secret!`);
     // res.send(`Deleting one secret!`);
     BankingCollection.findOneAndDelete({For:req.params.For}, (errors,results) => {
@@ -114,7 +114,7 @@ router.delete('/secret/banking/:For',(req,res) => {
 })
 
 //Read all Banking secret
-router.get('/secret/banking',(req,res) => {
+router.get('/secret/banking',authenticateToken,(req,res) => {
     console.log(`Reading all secrets!`);
     // res.send(`Reading all secrets!`);
     BankingCollection.find({}, (errors,results) => {
@@ -123,7 +123,7 @@ router.get('/secret/banking',(req,res) => {
 })
 
 //Read all Banking secret
-router.get('/secret/banking/For/:For',(req,res) => {
+router.get('/secret/banking/For/:For',authenticateToken,(req,res) => {
     console.log(`Reading all secrets!`);
     // res.send(`Reading all secrets!`);
     BankingCollection.find({For: req.params.For}, (errors,results) => {
@@ -136,7 +136,7 @@ router.get('/secret/banking/For/:For',(req,res) => {
 /////////////////////////////////////////////////
 
 //Create a secret
-router.post('/secret/identity',(req,res) => {
+router.post('/secret/identity',authenticateToken,(req,res) => {
     console.log(`Created a secret!`);
     // res.send(`Secret Created!`);
     IdentityCollection.create( req.body, (errors,results) => {
@@ -145,7 +145,7 @@ router.post('/secret/identity',(req,res) => {
 })
 
 //Read One secret
-router.get('/secret/identity/:For',(req,res) => {
+router.get('/secret/identity/:For',authenticateToken,(req,res) => {
     console.log(`Reading one secret!`);
     // res.send(`Reading one secret!`);
     IdentityCollection.findOne({For:req.params.For}, (errors,results) => {
@@ -154,7 +154,7 @@ router.get('/secret/identity/:For',(req,res) => {
 })
 
 //Update secret by For
-router.put('/secret/identity/:For',(req,res) => {
+router.put('/secret/identity/:For',authenticateToken,(req,res) => {
     console.log(`Updating one secret!`);
     // res.send(`Updating one secret!`);
     IdentityCollection.findOneAndUpdate({For:req.body.For}, req.body, {new:true}, (errors,results) => {
@@ -163,7 +163,7 @@ router.put('/secret/identity/:For',(req,res) => {
 })
 
 //Delete secret by For
-router.delete('/secret/identity/:For',(req,res) => {
+router.delete('/secret/identity/:For',authenticateToken,(req,res) => {
     console.log(`Deleting one secret!`);
     // res.send(`Deleting one secret!`);
     IdentityCollection.findOneAndDelete({For:req.params.For}, (errors,results) => {
@@ -172,7 +172,7 @@ router.delete('/secret/identity/:For',(req,res) => {
 })
 
 //Read all Identity secret
-router.get('/secret/identity',(req,res) => {
+router.get('/secret/identity',authenticateToken,(req,res) => {
     console.log(`Reading all secrets!`);
     // res.send(`Reading all secrets!`);
     IdentityCollection.find({}, (errors,results) => {
@@ -181,7 +181,7 @@ router.get('/secret/identity',(req,res) => {
 })
 
 //Read all Identity secret
-router.get('/secret/identity/For/:For',(req,res) => {
+router.get('/secret/identity/For/:For',authenticateToken,(req,res) => {
     console.log(`Reading all secrets!`);
     // res.send(`Reading all secrets!`);
     IdentityCollection.find({For: req.params.For}, (errors,results) => {
@@ -190,23 +190,23 @@ router.get('/secret/identity/For/:For',(req,res) => {
 })
 
 
-// //Authenticate Token Middleware
-// function authenticateToken(req,res,next) {
-//     const authHeader = req.headers["authorization"];
-//     const token = authHeader && authHeader.split(' ')[1];
-//     //If there is not token send 401 error status
-//     if (token === null) {return res.status(401);
-//     } else {
-//     // else verify the token and user
-//     jwt.verify(token, secretKey, (errors, user) => {
-//         if (errors){  res.status(403).json({ error: "verification error" });
-//     } else{
-//         req.user = user;
-//         next();
-//     }
-// })
-// }
-// }
+//Authenticate Token Middleware
+function authenticateToken(req,res,next) {
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(' ')[1];
+    //If there is not token send 401 error status
+    if (token === null) {return res.status(401);
+    } else {
+    // else verify the token and user
+    jwt.verify(token, secretKey, (errors, user) => {
+        if (errors){  res.status(403).json({ error: "verification error" });
+    } else{
+        req.user = user;
+        next();
+    }
+})
+}
+}
 
 
 //export route

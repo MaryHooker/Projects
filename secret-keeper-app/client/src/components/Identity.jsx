@@ -16,7 +16,12 @@ class Identity extends Component {
 
     //fetch method to show all data of identity collection
     allIdentitySecrets = async () => {
-        let response = await fetch('/api/secret/identity');
+        let response = await fetch('/api/secret/identity',{
+            method:'GET',
+            headers:{
+                'Authorization':this.props.token
+            }
+        });
         let json = await response.json();
         //sanity
         console.table(json)
