@@ -7,7 +7,9 @@ let jwt = require('jsonwebtoken');
 let secretKey = require('../config/keys').secretKey;
 
 //imports models
-let SecretCollection = require('../models/SecretSchema')
+let PersonalCollection = require('../models/PersonalSchema');
+let BankingCollection = require('../models/BankingSchema');
+let IdentityCollection = require('../models/IdentitySchema');
 
 // //sanity
 // router.get('/test',(req,res) =>{
@@ -15,54 +17,177 @@ let SecretCollection = require('../models/SecretSchema')
 // })
 
 ///////////////////////////////////////////////////
-// Secret Routes
+// Personal Routes
 /////////////////////////////////////////////////
 
 //Create a secret
-router.post('/secret',(req,res) => {
+router.post('/secret/personal',(req,res) => {
     console.log(`Created a secret!`);
     // res.send(`Secret Created!`);
-    SecretCollection.create( req.body, (errors,results) => {
+    PersonalCollection.create( req.body, (errors,results) => {
         errors ? res.json({error:errors}) : res.send(results);
     })
 })
 
 //Read One secret
-router.get('/secret/:title',(req,res) => {
+router.get('/secret/personal/:For',(req,res) => {
     console.log(`Reading one secret!`);
     // res.send(`Reading one secret!`);
-    SecretCollection.findOne({title:req.params.title}, (errors,results) => {
+    PersonalCollection.findOne({For:req.params.For}, (errors,results) => {
         errors ? res.json({error:errors}) : res.send(results);
     })
 })
 
-//Update secret by title
-router.put('/secret/:title',(req,res) => {
+//Update secret by For
+router.put('/secret/personal/:For',(req,res) => {
     console.log(`Updating one secret!`);
     // res.send(`Updating one secret!`);
-    SecretCollection.findOneAndUpdate({title:req.body.title}, req.body, {new:true}, (errors,results) => {
+    PersonalCollection.findOneAndUpdate({For:req.body.For}, req.body, {new:true}, (errors,results) => {
         errors ? res.json({error:errors}) : res.send(results);
     })
 })
 
-//Delete secret by title
-router.delete('/secret/:title',(req,res) => {
+//Delete secret by For
+router.delete('/secret/personal/:For',(req,res) => {
     console.log(`Deleting one secret!`);
     // res.send(`Deleting one secret!`);
-    SecretCollection.findOneAndDelete({title:req.params.title}, (errors,results) => {
+    PersonalCollection.findOneAndDelete({For:req.params.For}, (errors,results) => {
         errors ? res.json({error:errors}) : res.send(results);
     })
 })
 
-//Read all secret
-router.get('/secret',(req,res) => {
+//Read all personal secret
+router.get('/secret/personal',(req,res) => {
     console.log(`Reading all secrets!`);
     // res.send(`Reading all secrets!`);
-    SecretCollection.find({}, (errors,results) => {
+    PersonalCollection.find({}, (errors,results) => {
         errors ? res.json({error:errors}) : res.send(results);
     })
 })
 
+//Read all Personal secret
+router.get('/secret/personal/For/:For',(req,res) => {
+    console.log(`Reading all secrets!`);
+    // res.send(`Reading all secrets!`);
+    BankingCollection.find({For: req.params.For}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+//////////////////////////////////////////////////
+// Banking Routes
+/////////////////////////////////////////////////
+
+//Create a secret
+router.post('/secret/banking',(req,res) => {
+    console.log(`Created a secret!`);
+    // res.send(`Secret Created!`);
+    BankingCollection.create( req.body, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Read One secret
+router.get('/secret/banking/:For',(req,res) => {
+    console.log(`Reading one secret!`);
+    // res.send(`Reading one secret!`);
+    BankingCollection.findOne({For:req.params.For}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Update secret by For
+router.put('/secret/banking/:For',(req,res) => {
+    console.log(`Updating one secret!`);
+    // res.send(`Updating one secret!`);
+    BankingCollection.findOneAndUpdate({For:req.body.For}, req.body, {new:true}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Delete secret by For
+router.delete('/secret/banking/:For',(req,res) => {
+    console.log(`Deleting one secret!`);
+    // res.send(`Deleting one secret!`);
+    BankingCollection.findOneAndDelete({For:req.params.For}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Read all Banking secret
+router.get('/secret/banking',(req,res) => {
+    console.log(`Reading all secrets!`);
+    // res.send(`Reading all secrets!`);
+    BankingCollection.find({}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Read all Banking secret
+router.get('/secret/banking/For/:For',(req,res) => {
+    console.log(`Reading all secrets!`);
+    // res.send(`Reading all secrets!`);
+    BankingCollection.find({For: req.params.For}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//////////////////////////////////////////////////
+// Identity Routes
+/////////////////////////////////////////////////
+
+//Create a secret
+router.post('/secret/identity',(req,res) => {
+    console.log(`Created a secret!`);
+    // res.send(`Secret Created!`);
+    IdentityCollection.create( req.body, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Read One secret
+router.get('/secret/identity/:For',(req,res) => {
+    console.log(`Reading one secret!`);
+    // res.send(`Reading one secret!`);
+    IdentityCollection.findOne({For:req.params.For}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Update secret by For
+router.put('/secret/identity/:For',(req,res) => {
+    console.log(`Updating one secret!`);
+    // res.send(`Updating one secret!`);
+    IdentityCollection.findOneAndUpdate({For:req.body.For}, req.body, {new:true}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Delete secret by For
+router.delete('/secret/identity/:For',(req,res) => {
+    console.log(`Deleting one secret!`);
+    // res.send(`Deleting one secret!`);
+    IdentityCollection.findOneAndDelete({For:req.params.For}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Read all Identity secret
+router.get('/secret/identity',(req,res) => {
+    console.log(`Reading all secrets!`);
+    // res.send(`Reading all secrets!`);
+    IdentityCollection.find({}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
+
+//Read all Identity secret
+router.get('/secret/identity/For/:For',(req,res) => {
+    console.log(`Reading all secrets!`);
+    // res.send(`Reading all secrets!`);
+    IdentityCollection.find({For: req.params.For}, (errors,results) => {
+        errors ? res.json({error:errors}) : res.send(results);
+    })
+})
 
 
 // //Authenticate Token Middleware
