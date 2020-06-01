@@ -7,7 +7,7 @@ let MovieSchema = new Schema(
     {
         movieTitle:{required:true,type:String},
         details: String,
-        for:{required:true,type:String}
+        forWho:[{type:mongoose.Schema.Types.ObjectId,ref:"MovieListManagerForWho"}]
     }
 )
 
