@@ -6,6 +6,9 @@ import ForThem from './ForThem';
 import ForThemToWatch from './ForThemToWatch';
 import ForMeToWatch from './ForMeToWatch';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import MovieForm from './MovieForm';
+import ForWhoForm from './ForWhoForm';
+import MyFavorites from './MyFavorites';
 
 
 class AppContainer extends Component {
@@ -76,9 +79,14 @@ class AppContainer extends Component {
                     {/* For Me */}
                     <Route path='/forMe' component={() => <ForMe token={this.state.token} />} />
                     <Route path='/forMeToWatch' component={() => <ForMeToWatch />} />
+                    <Route to='/myFavorites' component={() => <MyFavorites token={this.props.token} />} />
+
                     {/* For Them */}
                     <Route path='/forThem' component={() => <ForThem />} />
                     <Route path='/forThemToWatch' component={() => <ForThemToWatch />} />
+                    <Route path='/movieForm' component={() => <MovieForm />} />
+                    <Route path='/forWhoForm' component={() => <ForWhoForm />} />
+
                 </Router>
             </div>
         );

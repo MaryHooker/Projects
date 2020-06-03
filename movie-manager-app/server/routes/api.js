@@ -55,35 +55,34 @@ router.delete('/:movieTitle', (req, res) => {
     })
 })
 
-//Read all movies by name
-router.get('/movies', authenticateToken, (req, res) => {
+//Read all movies
+router.get('/movies', (req, res) => {
     console.log(`Reading all movies!`);
     // res.send(`Reading all movies!`);
-    MovieCollection.find({ forWho: req.user.name }, (errors, results) => {
+    MovieCollection.find( {}, (errors, results) => {
         errors ? res.send(errors) : res.send(results);
-    })
+    }).populate('forWho');
 })
 
 //Relate a movie to ForWho 
-router.put('/movies/ForWho/:name', authenticateToken, async (req, res) => {
+router.put('/movies/ForWho/:name', async (req, res) => {
 
     let movie, forWho;
 
     await MovieCollection.create(req.body, (errors, results1) => {
         errors ? res.json(errors) : movie = results1;
-    });
 
-    await ForWhoCollection.findOne({ forWho: req.params.name }, (errors, results2) => {
-        errors ? res.json(errors) : forWho = results2;
-    });
-
-    movie.forWho.push(forWho._id)
-    movie.save();
-    forWho.movies.push(movie._id);
-    forWho.save();
-    res.send(movie);
-}
-)
+        ForWhoCollection.findOne({ name: req.params.name }, (errors, results2) => {
+            errors ? res.json(errors) : forWho = results2;
+    
+            movie.forWho.push(forWho._id)
+            movie.save();
+            forWho.movies.push(movie._id);
+            forWho.save();
+            res.send(movie);
+        });
+    })
+})
 
 
 ///////////////////////////////////////////////////
@@ -107,7 +106,7 @@ router.get('/ForWho/:name', (req, res) => {
     // res.send(`Reading one movie!`);
     ForWhoCollection.findOne({ name: req.params.name }, (errors, results) => {
         errors ? res.send(errors) : res.send(results);
-    })
+    }).populate('movies')
 })
 
 //Update a ForWho by name

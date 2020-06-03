@@ -8,7 +8,6 @@ class MyFavorites extends Component {
         }
     }
 
-
     // Run fetch method when component mounts
     componentDidMount() {
         this.loadData();
@@ -28,19 +27,11 @@ class MyFavorites extends Component {
 
         //wait for response
         let json = await response.json();
-        //check for errors
-        if (json.error) {
-            //reset state to empty out unwanted data
-            this.setState({ favoriteMovies: [] });
-            //alert the user of an error
-            window.alert(json.error);
-        } //Else place authorized data in state
-        else {
+
             this.setState({ favoriteMovies: json })
             //sanity
             console.log(`My Movies: ${JSON.stringify(this.state)}`);
-        }
-
+        
     }
 
     render() {

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {BrowserRouter as Router,Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class ForThem extends Component {
     constructor(props) {
@@ -10,9 +10,10 @@ class ForThem extends Component {
     render() { 
         return ( 
             <div>
-                <Router>
-                    <Link path='/forThemToWatch'>For Them To Watch</Link>
-                </Router>
+                <h3>For Them</h3>
+                    {/* <Link to='/forThemToWatch'>For Them To Watch</Link> */}
+                    <Link to='/movieForm'>Create Movie</Link> | 
+                    <Link to='/forWhoForm'>Add For Who</Link>
             </div>
          );
     }

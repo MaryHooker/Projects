@@ -1,7 +1,5 @@
 import React,{Component} from 'react';
-import MyFavorites from './MyFavorites';
-
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class ForMe extends Component {
     constructor(props) {
@@ -13,13 +11,10 @@ class ForMe extends Component {
     render() { 
         return ( 
             <div>
-                <Router>
-                    
+                    <h4>For Me</h4>
                     <Link path='/myFavorites'>My Favorites</Link> | 
                     <Link path='/forMeToWatch'>To Watch</Link>
 
-                    <Route to='/myFavorites' component={() => <MyFavorites token={this.props.token} />} />
-                </Router>
             </div>
          );
     }
