@@ -79,7 +79,7 @@ class AppContainer extends Component {
                     {/* For Me */}
                     <Route path='/forMe' component={() => <ForMe token={this.state.token} />} />
                     <Route path='/forMeToWatch' component={() => <ForMeToWatch />} />
-                    <Route to='/myFavorites' component={() => <MyFavorites token={this.props.token} />} />
+                    <Route path='/myFavorites' component={() => <MyFavorites token={this.props.token} />} />
 
                     {/* For Them */}
                     <Route path='/forThem' component={() => <ForThem />} />

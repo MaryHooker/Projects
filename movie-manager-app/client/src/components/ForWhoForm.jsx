@@ -9,8 +9,10 @@ class ForWhoForm extends Component {
     }
 
     // handle inputs
-    handleChanges = (event) => {
-        this.setState({ [event.target.name]: event.target.value })
+    handleChange = (event) => {
+        if(event.target.name ==="name"){
+            this.setState({name:event.target.value})
+        }
     }
 
     // fetch method to create a movie and push into ForWho movie array
@@ -40,8 +42,8 @@ class ForWhoForm extends Component {
                 <form action="">
 
                     <div>
-                        <label htmlFor="movieTitle">Name: </label>
-                        <input type="text" value={this.state.movieTitle} name="movieTitle" onChange={this.handleChanges} />
+                        <label htmlFor="name">Name: </label>
+                        <input type="text" value={this.state.name} name="name" id='name' onChange={this.handleChange} />
                     </div>
                     <button onClick={this.handleSubmission}>Submit</button>
                 </form>

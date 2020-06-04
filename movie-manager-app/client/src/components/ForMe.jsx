@@ -12,8 +12,8 @@ class ForMe extends Component {
         return ( 
             <div>
                     <h4>For Me</h4>
-                    <Link path='/myFavorites'>My Favorites</Link> | 
-                    <Link path='/forMeToWatch'>To Watch</Link>
+                    <Link to='/myFavorites'>My Favorites</Link> | 
+                    <Link to='/forMeToWatch'>To Watch</Link>
 
             </div>
          );
