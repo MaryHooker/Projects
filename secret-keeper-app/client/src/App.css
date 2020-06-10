@@ -1,0 +1,49 @@
+body{
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: serif;
+}
+
+span{
+  font-size: 18px;
+  color: red;
+}
+
+.noLine{
+  text-decoration: none;
+  margin: 1%;
+}
+
+.homeLink{
+  font-size: 20px;
+  color: blue;
+  text-decoration: none;
+}
+
+.pageTitle{
+  font-size: 34px;
+}
+
+.homeMargin{
+  margin-top: 1%;
+}
+
+p{
+  font-size: 18px;
+}
+
+.categoryLinks{
+  color: yellow;
+  font-size: 20px;
+}
+
+.links{
+  font-size: 20px;
+  color: red;
+}
+
+.loginRegister{
+  font-size: 22px;
+  color: blue;
+}
