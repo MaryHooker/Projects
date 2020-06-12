@@ -47,7 +47,7 @@ class CustomerRegister extends Component {
       <div className='regLogContainer'>
         <div className='formP'>
         <form action="" className='formP'>
-          <legend><h3>Register</h3></legend>
+          {/* <legend><h3>Register</h3></legend> */}
           <div className='labelPositions'>
             <label htmlFor="name">
               <span>Name </span>{" "}

@@ -1,6 +1,6 @@
 body{
   background-color: rgb(209, 162, 209);
-  color: rgb(136, 55, 136);
+  color: rgb(94, 26, 94);
   font-family: serif;
   text-align: center;
 }
@@ -8,19 +8,10 @@ body{
 span{
   font-size: 15px;
   text-align: left;
-}
-
-button{
-  background-color: rgb(136, 55, 136);
-  color: rgb(209, 162, 209);
-  border: 3px solid rgb(136, 55, 136);
-  border-radius: 3%;
-  margin-top: 3%;
-  font-family: serif;
   font-weight: bold;
 }
 
-button:hover{
+button{
   background-color: rgb(94, 26, 94);
   color: rgb(209, 162, 209);
   border: 3px solid rgb(94, 26, 94);
@@ -28,17 +19,67 @@ button:hover{
   margin-top: 3%;
   font-family: serif;
   font-weight: bold;
+  height: 30px;
+}
+
+button:hover{
+  background-color: rgb(200, 27, 206);
+  color: rgb(209, 162, 209);
+  border: 3px solid rgb(200, 27, 206);
+  border-radius: 3%;
+  margin-top: 3%;
+  font-family: serif;
+  font-weight: bold;
+  height: 30px;
 }
 
 input{
   background-color: rgb(209, 162, 209);
   color: rgb(94, 26, 94);
-  border: 1px solid rgb(136, 55, 136);
+  border: 1px solid rgb(94, 26, 94);
   border-radius: 4%;
   height: 20px;
   margin: 6px;
   width: 205px;
   margin-bottom: 5px;
+  font-family: serif;
+  font-size: 15px;
+}
+
+input:hover{
+  background-color: rgb(203, 125, 206);
+  color: rgb(94, 26, 94);
+  border: 1px solid rgb(94, 26, 94);
+  border-radius: 4%;
+  height: 20px;
+  margin: 6px;
+  width: 205px;
+  margin-bottom: 5px;
+  font-family: serif;
+  font-size: 15px;
+}
+
+hr{
+  border: 1px solid rgb(94, 26, 94);
+  width: 90px;
+}
+
+/* //////////////////////// */
+/*     Links */
+/* //////////////////////// */
+
+.noLine{
+  text-decoration: none;
+  color: rgb(200, 27, 206);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.noLine:hover{
+  text-decoration: none;
+  color: rgb(94, 26, 94);
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* //////////////////////// */
@@ -49,10 +90,9 @@ input{
 .regLogContainer{
   display: grid;
   grid-template-columns: repeat(12,1fr);
-  grid-template-rows: repeat(12,1fr);
 }
 
 .formP{
   grid-column: 5/9;
-  grid-row: 1;
 }
+

@@ -13,12 +13,6 @@ const secretKey = require('../config/keys').secretOrKey;
 //import schema
 const DreamerCollection = require('../models/DreamerSchema');
 
-//sanity
-router.get('/test',(req,res)=> {
-    console.log('Dreaming');
-    res.send('Dreaming');
-})
-
 /////////////////////////////////////////////////////////////////////
 //    Register/Login
 /////////////////////////////////////////////////////////////////////
@@ -154,7 +148,18 @@ router.delete('/admin/:email',(req,res) => {
 //    Customer
 /////////////////////////////////////////////////////////////////////
 
+//Edit customer/dreamer by email
+router.put('/customer/:email',(req,res) => {
+    console.log('Deleting customer');
+    // res.send(`Deleting customer`);
+    DreamerCollection.findOneAndUpdate({email:req.params.email}, req.body, {new:true}, (errors,results) => {
+        errors ? res.send(errors) : res.send(results);
+    })
+})
 
+/////////////////////////////////////////////////////////////////////
+//    Verify
+/////////////////////////////////////////////////////////////////////
 
 // Verify token
 

@@ -8,7 +8,9 @@ app.use(express.json());
 
 //import routes
 let dreamers = require('./routes/dreamers');
+let api = require('./routes/api');
 app.use('/dreamers',dreamers);
+app.use('/api',api);
 
 
 
