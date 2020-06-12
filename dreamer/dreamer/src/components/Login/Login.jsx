@@ -8,7 +8,6 @@ export default class Login extends Component {
       email: "",
       password: "",
       token: "",
-      redirect: false,
     };
   }
   //handle changes in the input fields
@@ -20,7 +19,7 @@ export default class Login extends Component {
   handleSubmission = async (event) => {
     event.preventDefault();
     let user = { email: this.state.email, password: this.state.password };
-    let response = await fetch("/users/login", {
+    let response = await fetch("/dreamers/login", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +33,7 @@ export default class Login extends Component {
     }
     this.setState({ token: json.token });
     console.log(this.state.token);
-    this.props.getToken(json.token);
+    // this.props.getToken(json.token);
   };
 
   render() {
