@@ -10,7 +10,8 @@ let DreamerSchema = new Schema(
         email:{required:true,type:String},
         password:{required:true,type:String},
         role:{required:true,type:String},
-        date:{type:Date, default:Date.now}
+        date:{type:Date, default:Date.now},
+        dreams:[{type:mongoose.Schema.Types.ObjectId,ref:"dreams"}]
     }
 )
 
