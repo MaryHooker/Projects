@@ -96,7 +96,6 @@ router.post("/login", (req, res) => {
 //    Admin
 /////////////////////////////////////////////////////////////////////
 
-
 // View all dreamers/customers
 router.get('/customers',(req,res) => {
     console.log('Viewing all customers');
@@ -105,7 +104,6 @@ router.get('/customers',(req,res) => {
         errors ? res.send(errors) : res.send(results);
     })
 })
-
 
 // View specific dreamer by email
 router.get('/customer/view/:email',(req,res) => {
@@ -151,7 +149,6 @@ router.delete('/admin/:email',(req,res) => {
         errors ? res.send(errors) : res.send(results);
     })
 })
-
 
 /////////////////////////////////////////////////////////////////////
 //    Customer

@@ -44,12 +44,13 @@ class CustomerRegister extends Component {
   render() {
    
     return (
-      <div>
-        <h5>Register</h5>
-        <form action="">
-          <div>
+      <div className='regLogContainer'>
+        <div className='formP'>
+        <form action="" className='formP'>
+          <legend><h3>Register</h3></legend>
+          <div className='labelPositions'>
             <label htmlFor="name">
-              <span>Name:</span>{" "}
+              <span>Name </span>{" "}
             </label>
             <input
               type="text"
@@ -59,9 +60,9 @@ class CustomerRegister extends Component {
               onChange={this.handleInputs}
             />
           </div>
-          <div>
+          <div className='labelPositions'>
             <label htmlFor="email">
-              <span>Email:</span>{" "}
+              <span>Email </span>{" "}
             </label>
             <input
               type="email"
@@ -71,9 +72,9 @@ class CustomerRegister extends Component {
               onChange={this.handleInputs}
             />
           </div>
-          <div>
+          <div className='labelPositions'>
             <label htmlFor="password">
-              <span>Password:</span>{" "}
+              <span>Password </span>{" "}
             </label>
             <input
               type="password"
@@ -85,6 +86,7 @@ class CustomerRegister extends Component {
           </div>
           <button onClick={this.handleSubmission}>Submit</button>
         </form>
+        </div>
       </div>
     );
   }
