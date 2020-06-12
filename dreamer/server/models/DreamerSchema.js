@@ -15,4 +15,4 @@ let DreamerSchema = new Schema(
 )
 
 //export model
-module.exports = mongoose.model('Dreamers', DreamerSchema);
+module.exports = mongoose.model('dreamers', DreamerSchema);

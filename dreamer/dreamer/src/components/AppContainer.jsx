@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import CustomerRegister from './CustomerRegister';
 
 class AppContainer extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class AppContainer extends Component {
         return ( 
             <div>
                 <h1>Dreamer</h1>
+                <CustomerRegister/>
             </div>
          );
     }

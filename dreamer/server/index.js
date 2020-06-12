@@ -7,10 +7,9 @@ app.use(express.json());
 
 
 //import routes
-const dreamers = require('./routes/dreamers');
-// const api = require('./routes/api');
+let dreamers = require('./routes/dreamers');
 app.use('/dreamers',dreamers);
-// app.use('/api', api);
+
 
 
 // CONNECTING TO A MONGO DATABASE
