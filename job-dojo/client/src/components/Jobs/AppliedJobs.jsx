@@ -7,7 +7,7 @@ class AppliedJobs extends Component {
     }
     render() { 
         return ( <div>
-            <h3>Applied Jobs</h3>
+            <h3>Viewing all Applied Jobs</h3>
         </div> );
     }
 }
