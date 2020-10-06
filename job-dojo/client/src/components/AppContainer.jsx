@@ -19,6 +19,11 @@ class AppContainer extends Component {
             <div>
             <h1>Job Dojo</h1>
             <Router>
+                <Link to='/'>Home</Link>
+                <br/> 
+                <br/>               
+                <Link to='/appliedJobs'>Applied Jobs</Link> | 
+
                 <Link to='/appliedJobs'>Applied Jobs</Link> | 
                 <Link to='/addJob'>Add Job</Link> | 
                 <Link to='/appliedJobs/:company'>View Specific Job</Link> | 
