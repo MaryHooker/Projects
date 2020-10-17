@@ -19,13 +19,39 @@ class AppliedJobs extends Component {
         let json = await response.json();
         //sanity
         console.table(json);
+        //place received data in state
+        this.setState(
+            {
+                appliedJobs:json
+            }
+        )
+        //sanity
+        console.log(`Applied Jobs state ${JSON.stringify(json)}`)
+
     }
 
 
     render() { 
-        return ( <div>
+        return ( 
+        <div>
             <h3>Viewing all Applied Jobs</h3>
-        </div> );
+            <div>
+            {
+                this.state.appliedJobs.map((job) => {
+                    return(
+                        <div>
+                            <p>Company: {job.company}</p>
+                            <p>Title: {job.title}</p>
+                            <p>Description: {job.jobDescription}</p>
+                            <p>Website: {job.website}</p>
+                            <hr/>
+                        </div>
+                    )
+                })
+            }
+            </div>
+        </div> 
+        );
     }
 }
  
