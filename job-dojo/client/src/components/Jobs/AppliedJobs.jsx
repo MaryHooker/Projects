@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import {Link} from 'react-router-dom';
 class AppliedJobs extends Component {
     constructor(props) {
         super(props);
@@ -42,8 +42,8 @@ class AppliedJobs extends Component {
                         <div>
                             <p>Company: {job.company}</p>
                             <p>Title: {job.title}</p>
-                            <p>Description: {job.jobDescription}</p>
-                            <p>Website: {job.website}</p>
+                            {/* <p>Description: {job.jobDescription}</p> */}
+                            <a href={job.website} target="_blank">{job.website}</a>
                             <hr/>
                         </div>
                     )
