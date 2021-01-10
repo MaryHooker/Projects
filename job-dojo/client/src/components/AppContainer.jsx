@@ -31,7 +31,7 @@ class AppContainer extends Component {
 
                 <Route path='/appliedJobs' exact component={() => <AppliedJobs/>}/>
                 <Route path='/addJob' exact component={() => <AddJob/>}/>
-                <Route path='/appliedJobs/:company' exact component={() => <SpecificJob/>}/>
+                <Route path='/appliedJobs/:company' exact component={(props) => <SpecificJob {...props} />}/>
                 <Route path='/appliedJobs/update/:company' exact component={() => <UpdateJob/>}/>
                 <Route path='/appliedJobs/delete/:company' exact component={() => <DeleteJob/>}/>
 
@@ -39,7 +39,6 @@ class AppContainer extends Component {
                 </Router>
         </div>
         )
-       
     }
 }
 

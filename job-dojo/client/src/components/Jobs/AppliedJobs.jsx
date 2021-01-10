@@ -44,6 +44,7 @@ class AppliedJobs extends Component {
                             <p>Title: {job.title}</p>
                             {/* <p>Description: {job.jobDescription}</p> */}
                             <a href={job.website} target="_blank">{job.website}</a>
+                            <Link to={`/appliedJobs/${job.company}`}><button>Details</button></Link>
                             <hr/>
                         </div>
                     )

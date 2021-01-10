@@ -23,7 +23,7 @@ router.post('/jobs',(req,res) => {
     })
 });
 
-//Read a job by title
+//Read a job by company
 router.get('/jobs/:company',(req,res) => {
     //sanity
     console.log('Viewing specific job!');
