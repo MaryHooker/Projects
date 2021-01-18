@@ -6,6 +6,8 @@ const app = express();
 app.use(express.json());
 
 //import routes
+let api = require('./routes/api');
+app.use('/api', api);
 
 //connect to mongoDB
 
